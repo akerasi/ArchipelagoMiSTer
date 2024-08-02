@@ -1,0 +1,10 @@
+Wheel-Version: 1.0
+Generator: bdist_wheel (0.38.4)
+Root-Is-Purelib: false
+Tag: py2-none-manylinux_2_17_armv7l
+Tag: py2-none-manylinux2014_armv7l
+Tag: py2-none-musllinux_1_1_armv7l
+Tag: py3-none-manylinux_2_17_armv7l
+Tag: py3-none-manylinux2014_armv7l
+Tag: py3-none-musllinux_1_1_armv7l
+

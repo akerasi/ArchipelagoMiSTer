@@ -1,0 +1,13 @@
+jellyfish-1.1.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+jellyfish-1.1.0.dist-info/METADATA,sha256=vJU8E8TpDmNCxaojwSaahdxtHNLd08OHipvEIpBbCbQ,2560
+jellyfish-1.1.0.dist-info/RECORD,,
+jellyfish-1.1.0.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jellyfish-1.1.0.dist-info/WHEEL,sha256=e0oqq1b90k4ddhwm6vItm6PXAUv60IAE7qkvMNMkqwI,127
+jellyfish-1.1.0.dist-info/license_files/LICENSE,sha256=aEvaTwAJKvu1SGNW0ODpW3kJ0XSWER0yJo5DjsXWGOA,1067
+jellyfish/__init__.py,sha256=YjNVQBPjxvPaF9VDDFc-wOiEiWBb_sQ4XszEn0CcOtM,68
+jellyfish/__init__.pyi,sha256=49oAwdhr64TUWttv6ZVi4letfMPWnzW9EUqgWsjw4TA,626
+jellyfish/__pycache__/__init__.cpython-39.pyc,,
+jellyfish/__pycache__/_jellyfish.cpython-39.pyc,,
+jellyfish/_jellyfish.py,sha256=8Sl_wlLa-60JZvmrXVXhtQ_3ACR0mxhEQjXR4aHTm2A,13253
+jellyfish/_rustyfish.cpython-39-arm-linux-gnueabihf.so,sha256=pk8a5lweKiz0213Tboi0TSYIS_6n38K5Ay5_xpNK_Xw,749300
+jellyfish/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: zilliandomizer
+Version: 0.9.0
+Summary: Zillion randomizer
+Author: Doug Hoskisson
+License: LAGPL
+Platform: unix
+Platform: linux
+Platform: osx
+Platform: cygwin
+Platform: win32
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+License-File: LICENSE
+Provides-Extra: testing
+Requires-Dist: pytest >=7.1 ; extra == 'testing'
+Requires-Dist: pytest-cov >=4.0 ; extra == 'testing'
+Requires-Dist: mypy >=1.7 ; extra == 'testing'
+Requires-Dist: flake8 >=5.0 ; extra == 'testing'
+Requires-Dist: tox >=4.15 ; extra == 'testing'
+
