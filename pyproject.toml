@@ -1,0 +1,24 @@
+[project]
+name = "archipelago-mister"
+version = "0.50.1"
+dependencies = [
+  "colorama>=0.4.6",
+  "websockets>=12.0",
+  "PyYAML>=6.0.1",
+  "jellyfish>=1.0.3",
+  "jinja2>=3.1.4",
+  "schema>=0.7.7",
+  "kivy>=2.3.0",
+  "bsdiff4>=1.2.4",
+  "platformdirs>=4.2.2",
+  "certifi>=2024.6.2",
+  "cython>=3.0.10",
+  "cymem>=2.0.8",
+  "orjson>=3.10.3",
+  "typing_extensions>=4.12.1",
+  "maseya-z3pr>=1.0.0rc1",
+  "xxtea>=3.0.0",
+  "pyevermizer==0.48.0",
+  "zilliandomizer @ git+https://github.com/beauxq/zilliandomizer@33045067f626266850f91c8045b9d3a9f52d02b0#0.9.0",
+  "typing-extensions>=4.7, <5"
+]
