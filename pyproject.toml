@@ -1,5 +1,5 @@
 [project]
-name = "ArchipelagoMiSTer"
+name = "archipelago-mister"
 version = "0.50.1"
 dependencies = [
   "colorama>=0.4.6",
