@@ -31,3 +31,6 @@ build-backend = "hatchling.build"
 [project.scripts]
 generate = "archipelago:generate"
 patch = "archipelago:patch"
+
+[tool.hatch.metadata]
+allow-direct-references = true
