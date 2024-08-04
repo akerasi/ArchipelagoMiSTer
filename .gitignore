@@ -30,7 +30,7 @@
 *.apsave
 *.BIN
 *.puml
-
+.venv/
 setups
 build
 bundle/components.wxs
