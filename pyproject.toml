@@ -29,8 +29,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-generate = "archipelago:generate"
-patch = "archipelago:patch"
+archi-generate = "archipelago_mister:Generate"
+archi-patch = "archipelago_mister:Patch"
 
 [tool.hatch.metadata]
 allow-direct-references = true
