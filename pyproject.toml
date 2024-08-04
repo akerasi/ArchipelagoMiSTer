@@ -39,3 +39,6 @@ allow-direct-references = true
 include=[
   "*"
 ]
+
+[tool.hatch.build.targets.wheel]
+only-packages = true
