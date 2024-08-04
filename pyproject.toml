@@ -34,3 +34,8 @@ patch = "archipelago:patch"
 
 [tool.hatch.metadata]
 allow-direct-references = true
+
+[tool.hatch.build.targets.sdist]
+include=[
+  "*"
+]
