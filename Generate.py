@@ -13,9 +13,6 @@ from collections import Counter
 from typing import Any, Dict, Tuple, Union
 from itertools import chain
 
-import ModuleUpdate
-
-ModuleUpdate.update()
 
 import Utils
 import Options
