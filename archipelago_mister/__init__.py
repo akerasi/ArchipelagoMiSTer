@@ -1,2 +1,2 @@
-import Generate
-import Patch
+import archipelago_mister.Generate
+import archipelago_mister.Patch
