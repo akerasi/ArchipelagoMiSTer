@@ -1,11 +1,11 @@
 import typing
 
-from BaseClasses import MultiWorld
-from Options import Choice, Range, DeathLink, DefaultOnToggle, FreeText, ItemsAccessibility, Option, \
+from archipelago_mister.BaseClasses import MultiWorld
+from archipelago_mister.Options import Choice, Range, DeathLink, DefaultOnToggle, FreeText, ItemsAccessibility, Option, \
     PlandoBosses, PlandoConnections, PlandoTexts, Removed, StartInventoryPool, Toggle
-from .EntranceShuffle import default_connections, default_dungeon_connections, \
+from archipelago_mister.worlds.alttp.EntranceShuffle import default_connections, default_dungeon_connections, \
     inverted_default_connections, inverted_default_dungeon_connections
-from .Text import TextTable
+from archipelago_mister.worlds.alttp.Text import TextTable
 
 
 class GlitchesRequired(Choice):

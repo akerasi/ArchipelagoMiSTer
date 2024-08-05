@@ -14,14 +14,14 @@ from typing import Any, Dict, Tuple, Union
 from itertools import chain
 
 
-import Utils
-import Options
-from BaseClasses import seeddigits, get_seed, PlandoOptions
-from Utils import parse_yamls, version_tuple, __version__, tuplize_version
+import archipelago_mister.Utils
+import archipelago_mister.Options
+from archipelago_mister.BaseClasses import seeddigits, get_seed, PlandoOptions
+from archipelago_mister.Utils import parse_yamls, version_tuple, __version__, tuplize_version
 
 
 def mystery_argparse():
-    from settings import get_settings
+    from archipelago_mister.settings import get_settings
     settings = get_settings()
     defaults = settings.generator
 
@@ -72,7 +72,7 @@ def main(args=None) -> Tuple[argparse.Namespace, int]:
 
     seed = get_seed(args.seed)
 
-    Utils.init_logging(f"Generate_{seed}", loglevel=args.log_level)
+    archipelago_mister.Utils.init_logging(f"Generate_{seed}", loglevel=args.log_level)
     random.seed(seed)
     seed_name = get_seed_name(random)
 
@@ -141,8 +141,8 @@ def main(args=None) -> Tuple[argparse.Namespace, int]:
                         f"Provide a general weights file ({args.weights_file_path}) or individual player files. "
                         f"A mix is also permitted.")
 
-    from worlds.AutoWorld import AutoWorldRegister
-    from worlds.alttp.EntranceRandomizer import parse_arguments
+    from archipelago_mister.worlds.AutoWorld import AutoWorldRegister
+    from archipelago_mister.worlds.alttp.EntranceRandomizer import parse_arguments
     erargs = parse_arguments(['--multi', str(args.multi)])
     erargs.seed = seed
     erargs.plando_options = args.plando
@@ -359,7 +359,7 @@ def update_weights(weights: dict, new_weights: dict, update_type: str, name: str
 
 
 def roll_meta_option(option_key, game: str, category_dict: Dict) -> Any:
-    from worlds import AutoWorldRegister
+    from archipelago_mister.worlds import AutoWorldRegister
 
     if not game:
         return get_choice(option_key, category_dict)
@@ -438,12 +438,12 @@ def handle_option(ret: argparse.Namespace, game_weights: dict, option_key: str, 
     except Exception as e:
         raise Options.OptionError(f"Error generating option {option_key} in {ret.game}") from e
     else:
-        from worlds import AutoWorldRegister
+        from archipelago_mister.worlds import AutoWorldRegister
         player_option.verify(AutoWorldRegister.world_types[ret.game], ret.name, plando_options)
 
 
 def roll_settings(weights: dict, plando_options: PlandoOptions = PlandoOptions.bosses):
-    from worlds import AutoWorldRegister
+    from archipelago_mister.worlds import AutoWorldRegister
 
     if "linked_options" in weights:
         weights = roll_linked_options(weights)
@@ -471,7 +471,7 @@ def roll_settings(weights: dict, plando_options: PlandoOptions = PlandoOptions.b
 
     ret.game = get_choice("game", weights)
     if ret.game not in AutoWorldRegister.world_types:
-        from worlds import failed_world_loads
+        from archipelago_mister.worlds import failed_world_loads
         picks = Utils.get_fuzzy_results(ret.game, list(AutoWorldRegister.world_types) + failed_world_loads, limit=1)[0]
         if picks[0] in failed_world_loads:
             raise Exception(f"No functional world found to handle game {ret.game}. "
@@ -544,7 +544,7 @@ if __name__ == '__main__':
     import atexit
     confirmation = atexit.register(input, "Press enter to close.")
     erargs, seed = main()
-    from Main import main as ERmain
+    from archipelago_mister.Main import main as ERmain
     multiworld = ERmain(erargs, seed)
     if __debug__:
         import gc

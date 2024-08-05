@@ -3,13 +3,13 @@ from __future__ import annotations
 import logging
 from typing import Optional, Union, List, Tuple, Callable, Dict, TYPE_CHECKING
 
-from Fill import FillError
-from .Options import LTTPBosses as Bosses
-from .StateHelpers import can_shoot_arrows, can_extend_magic, can_get_good_bee, has_sword, has_beam_sword, \
+from archipelago_mister.Fill import FillError
+from archipelago_mister.worlds.alttp.Options import LTTPBosses as Bosses
+from archipelago_mister.worlds.alttp.StateHelpers import can_shoot_arrows, can_extend_magic, can_get_good_bee, has_sword, has_beam_sword, \
     has_melee_weapon, has_fire_source, can_use_bombs
 
 if TYPE_CHECKING:
-    from . import ALTTPWorld
+    from archipelago_mister.worlds.alttp import ALTTPWorld
 
 
 class Boss:

@@ -1,5 +1,5 @@
-from .SubClasses import LTTPRegion
-from BaseClasses import CollectionState
+from archipelago_mister.worlds.alttp.SubClasses import LTTPRegion
+from archipelago_mister.BaseClasses import CollectionState
 
 
 def is_not_bunny(state: CollectionState, region: LTTPRegion, player: int) -> bool:

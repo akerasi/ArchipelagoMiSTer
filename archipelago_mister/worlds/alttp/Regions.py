@@ -1,8 +1,8 @@
 import collections
 import typing
 
-from BaseClasses import Entrance, MultiWorld
-from .SubClasses import LTTPRegion, LTTPRegionType
+from archipelago_mister.BaseClasses import Entrance, MultiWorld
+from archipelago_mister.worlds.alttp.SubClasses import LTTPRegion, LTTPRegionType
 
 
 def is_main_entrance(entrance: Entrance) -> bool:

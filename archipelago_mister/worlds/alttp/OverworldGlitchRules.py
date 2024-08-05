@@ -2,9 +2,9 @@
 Helper functions to deliver entrance/exit/region sets to OWG rules.
 """
 
-from BaseClasses import Entrance
+from archipelago_mister.BaseClasses import Entrance
 
-from .StateHelpers import can_lift_heavy_rocks, can_boots_clip_lw, can_boots_clip_dw, can_get_glitched_speed_dw
+from archipelago_mister.worlds.alttp.StateHelpers import can_lift_heavy_rocks, can_boots_clip_lw, can_boots_clip_dw, can_get_glitched_speed_dw
 
 
 def get_sword_required_superbunny_mirror_regions():

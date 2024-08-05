@@ -4,11 +4,8 @@ import os
 import sys
 from typing import Tuple, Optional, TypedDict
 
-if __name__ == "__main__":
-    import ModuleUpdate
-    ModuleUpdate.update()
 
-from worlds.Files import AutoPatchRegister, APAutoPatchInterface
+from archipelago_mister.worlds.Files import AutoPatchRegister, APAutoPatchInterface
 
 
 class RomMeta(TypedDict):

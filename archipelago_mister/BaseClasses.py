@@ -15,12 +15,12 @@ from enum import IntEnum, IntFlag
 from typing import Any, Callable, Dict, Iterable, Iterator, List, Mapping, NamedTuple, Optional, Set, Tuple, \
                    TypedDict, Union, Type, ClassVar
 
-import NetUtils
-import Options
-import Utils
+import archipelago_mister.NetUtils
+import archipelago_mister.Options
+import archipelago_mister.Utils
 
 if typing.TYPE_CHECKING:
-    from worlds import AutoWorld
+    from archipelago_mister.worlds import AutoWorld
 
 
 class Group(TypedDict, total=False):
@@ -374,15 +374,15 @@ class MultiWorld():
     def player_ids(self) -> Tuple[int, ...]:
         return tuple(range(1, self.players + 1))
 
-    @Utils.cache_self1
+    @archipelago_mister.Utils.cache_self1
     def get_game_players(self, game_name: str) -> Tuple[int, ...]:
         return tuple(player for player in self.player_ids if self.game[player] == game_name)
 
-    @Utils.cache_self1
+    @archipelago_mister.Utils.cache_self1
     def get_game_groups(self, game_name: str) -> Tuple[int, ...]:
         return tuple(group_id for group_id in self.groups if self.game[group_id] == game_name)
 
-    @Utils.cache_self1
+    @archipelago_mister.Utils.cache_self1
     def get_game_worlds(self, game_name: str):
         return tuple(world for player, world in self.worlds.items() if
                      player not in self.groups and self.game[player] == game_name)

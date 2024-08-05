@@ -14,11 +14,11 @@ from dataclasses import dataclass
 from schema import And, Optional, Or, Schema
 from typing_extensions import Self
 
-from Utils import get_fuzzy_results, is_iterable_except_str
+from archipelago_mister.Utils import get_fuzzy_results, is_iterable_except_str
 
 if typing.TYPE_CHECKING:
-    from BaseClasses import PlandoOptions
-    from worlds.AutoWorld import World
+    from archipelago_mister.BaseClasses import PlandoOptions
+    from archipelago_mister.worlds.AutoWorld import World
     import pathlib
 
 

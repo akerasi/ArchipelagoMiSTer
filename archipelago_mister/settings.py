@@ -34,7 +34,7 @@ def _update_cache() -> None:
         return
 
     try:
-        from worlds.AutoWorld import AutoWorldRegister
+        from archipelago_mister.worlds.AutoWorld import AutoWorldRegister
         for world in AutoWorldRegister.world_types.values():
             annotation = world.__annotations__.get("settings", None)
             if annotation is None or annotation == "ClassVar[Optional['Group']]":
@@ -199,7 +199,7 @@ class Group:
     @classmethod
     def _dump_value(cls, value: Any, f: TextIO, indent: str) -> None:
         """Write a single yaml line to f"""
-        from Utils import dump, Dumper as BaseDumper
+        from archipelago_mister.Utils import dump, Dumper as BaseDumper
         yaml_line: str = dump(value, Dumper=cast(BaseDumper, cls._dumper), width=2**31-1)
         assert yaml_line.count("\n") == 1, f"Unexpected input for yaml dumper: {value}"
         f.write(f"{indent}{yaml_line}")
@@ -209,7 +209,7 @@ class Group:
         """Write a group, dict or sequence item to f, where attr can be a scalar or a collection"""
 
         # lazy construction of yaml Dumper to avoid loading Utils early
-        from Utils import Dumper as BaseDumper
+        from archipelago_mister.Utils import Dumper as BaseDumper
         from yaml import ScalarNode, MappingNode
         if not hasattr(cls, "_dumper"):
             if cls is Group or not hasattr(Group, "_dumper"):
@@ -296,7 +296,7 @@ T = TypeVar("T", bound="Path")
 def _resolve_exe(s: str) -> str:
     """Append exe file extension if the file is an executable"""
     if isinstance(s, Path):
-        from Utils import is_windows
+        from archipelago_mister.Utils import is_windows
         if s.is_exe and is_windows and not s.lower().endswith(".exe"):
             return str(s + ".exe")
     return str(s)
@@ -343,7 +343,7 @@ class _UserPath(str):
     def resolve(self) -> str:
         if os.path.isabs(self):
             return str(self)
-        from Utils import user_path
+        from archipelago_mister.Utils import user_path
         return user_path(_resolve_exe(self))
 
 
@@ -776,7 +776,7 @@ class Settings(Group):
     def __init__(self, location: Optional[str]):  # change to PathLike[str] once we drop 3.8?
         super().__init__()
         if location:
-            from Utils import parse_yaml
+            from archipelago_mister.Utils import parse_yaml
             with open(location, encoding="utf-8-sig") as f:
                 options = parse_yaml(f.read())
                 # TODO: detect if upgrade is required
@@ -841,7 +841,7 @@ def get_settings() -> Settings:
     with _lock:  # make sure we only have one instance
         res = getattr(get_settings, "_cache", None)
         if not res:
-            from Utils import user_path, local_path
+            from archipelago_mister.Utils import user_path, local_path
             filenames = ("options.yaml", "host.yaml")
             locations: List[str] = []
             if os.path.join(os.getcwd()) != local_path():

@@ -1,10 +1,10 @@
 from typing import NamedTuple, Union
 import logging
 
-from BaseClasses import Item, Tutorial, ItemClassification
+from archipelago_mister.BaseClasses import Item, Tutorial, ItemClassification
 
-from ..AutoWorld import World, WebWorld
-from NetUtils import SlotType
+from archipelago_mister.worlds.AutoWorld import World, WebWorld
+from archipelago_mister.NetUtils import SlotType
 
 
 class GenericWeb(WebWorld):

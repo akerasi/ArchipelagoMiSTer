@@ -1,6 +1,6 @@
-from BaseClasses import Entrance
-from worlds.generic.Rules import set_rule, add_rule
-from .StateHelpers import can_bomb_clip, has_sword, has_beam_sword, has_fire_source, can_melt_things, has_misery_mire_medallion
+from archipelago_mister.BaseClasses import Entrance
+from archipelago_mister.worlds.generic.Rules import set_rule, add_rule
+from archipelago_mister.worlds.alttp.StateHelpers import can_bomb_clip, has_sword, has_beam_sword, has_fire_source, can_melt_things, has_misery_mire_medallion
 
 
 # We actually need the logic to properly "mark" these regions as Light or Dark world. 

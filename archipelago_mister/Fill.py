@@ -4,11 +4,11 @@ import logging
 import typing
 from collections import Counter, deque
 
-from BaseClasses import CollectionState, Item, Location, LocationProgressType, MultiWorld
-from Options import Accessibility
+from archipelago_mister.BaseClasses import CollectionState, Item, Location, LocationProgressType, MultiWorld
+from archipelago_mister.Options import Accessibility
 
-from worlds.AutoWorld import call_all
-from worlds.generic.Rules import add_item_rule
+from archipelago_mister.worlds.AutoWorld import call_all
+from archipelago_mister.worlds.generic.Rules import add_item_rule
 
 
 class FillError(RuntimeError):

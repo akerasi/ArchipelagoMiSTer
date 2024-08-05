@@ -17,7 +17,7 @@ import logging
 import warnings
 
 from argparse import Namespace
-from settings import Settings, get_settings
+from archipelago_mister.settings import Settings, get_settings
 from typing import BinaryIO, Coroutine, Optional, Set, Dict, Any, Union
 from typing_extensions import TypeGuard
 from yaml import load, load_all, dump

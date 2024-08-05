@@ -10,13 +10,13 @@ from dataclasses import make_dataclass
 from typing import (Any, Callable, ClassVar, Dict, FrozenSet, List, Mapping, Optional, Set, TextIO, Tuple,
                     TYPE_CHECKING, Type, Union)
 
-from Options import item_and_loc_options, OptionGroup, PerGameCommonOptions
-from BaseClasses import CollectionState
+from archipelago_mister.Options import item_and_loc_options, OptionGroup, PerGameCommonOptions
+from archipelago_mister.BaseClasses import CollectionState
 
 if TYPE_CHECKING:
-    from BaseClasses import MultiWorld, Item, Location, Tutorial, Region, Entrance
-    from . import GamesPackage
-    from settings import Group
+    from archipelago_mister.BaseClasses import MultiWorld, Item, Location, Tutorial, Region, Entrance
+    from archipelago_mister.worlds import GamesPackage
+    from archipelago.mistersettings import Group
 
 perf_logger = logging.getLogger("performance")
 

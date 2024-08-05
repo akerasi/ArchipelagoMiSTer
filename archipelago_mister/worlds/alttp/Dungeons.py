@@ -3,17 +3,17 @@ from __future__ import annotations
 import typing
 from typing import List, Optional
 
-from BaseClasses import CollectionState, Region, MultiWorld
-from Fill import fill_restrictive
+from archipelago_mister.BaseClasses import CollectionState, Region, MultiWorld
+from archipelago_mister.Fill import fill_restrictive
 
-from .Bosses import BossFactory, Boss
-from .Items import item_factory
-from .Regions import lookup_boss_drops, key_drop_data
-from .Options import small_key_shuffle
+from archipelago_mister.worlds.alttp.Bosses import BossFactory, Boss
+from archipelago_mister.worlds.alttp.Items import item_factory
+from archipelago_mister.worlds.alttp.Regions import lookup_boss_drops, key_drop_data
+from archipelago_mister.worlds.alttp.Options import small_key_shuffle
 
 if typing.TYPE_CHECKING:
-    from .SubClasses import ALttPLocation, ALttPItem
-    from . import ALTTPWorld
+    from archipelago_mister.worlds.alttp.SubClasses import ALttPLocation, ALttPItem
+    from archipelago_mister.worlds.alttp import ALTTPWorld
 
 
 class Dungeon:

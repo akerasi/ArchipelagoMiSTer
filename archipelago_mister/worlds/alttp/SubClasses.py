@@ -2,11 +2,11 @@
 from typing import Optional, TYPE_CHECKING
 from enum import IntEnum
 
-from BaseClasses import Location, Item, ItemClassification, Region, MultiWorld
+from archipelago_mister.BaseClasses import Location, Item, ItemClassification, Region, MultiWorld
 
 if TYPE_CHECKING:
-    from .Dungeons import Dungeon
-    from .Regions import LTTPRegion
+    from archipelago_mister.worlds.alttp.Dungeons import Dungeon
+    from archipelago_mister.worlds.alttp.Regions import LTTPRegion
 
 
 class ALttPLocation(Location):

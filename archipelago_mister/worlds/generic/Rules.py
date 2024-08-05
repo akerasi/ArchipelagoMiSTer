@@ -2,10 +2,10 @@ import collections
 import logging
 import typing
 
-from BaseClasses import LocationProgressType, MultiWorld, Location, Region, Entrance
+from archipelago_mister.BaseClasses import LocationProgressType, MultiWorld, Location, Region, Entrance
 
 if typing.TYPE_CHECKING:
-    import BaseClasses
+    import archipelago_mister.BaseClasses
 
     CollectionRule = typing.Callable[[BaseClasses.CollectionState], bool]
     ItemRule = typing.Callable[[BaseClasses.Item], bool]
