@@ -160,38 +160,12 @@ def install_apworld(apworld_path: str = "") -> None:
 components: List[Component] = [
     # Launcher
     Component('Launcher', 'Launcher', component_type=Type.HIDDEN),
-    # Core
-    Component('Host', 'MultiServer', 'ArchipelagoServer', cli=True,
-              file_identifier=SuffixIdentifier('.archipelago', '.zip')),
+    Component('Patch', 'Patch', cli=True),
     Component('Generate', 'Generate', cli=True),
+
     Component("Install APWorld", func=install_apworld, file_identifier=SuffixIdentifier(".apworld")),
     Component('Text Client', 'CommonClient', 'ArchipelagoTextClient', func=launch_textclient),
-    Component('Links Awakening DX Client', 'LinksAwakeningClient',
-              file_identifier=SuffixIdentifier('.apladx')),
-    Component('LttP Adjuster', 'LttPAdjuster'),
-    # Minecraft
-    Component('Minecraft Client', 'MinecraftClient', icon='mcicon', cli=True,
-              file_identifier=SuffixIdentifier('.apmc')),
-    # Ocarina of Time
-    Component('OoT Client', 'OoTClient',
-              file_identifier=SuffixIdentifier('.apz5')),
-    Component('OoT Adjuster', 'OoTAdjuster'),
-    # FF1
-    Component('FF1 Client', 'FF1Client'),
-    # TLoZ
-    Component('Zelda 1 Client', 'Zelda1Client', file_identifier=SuffixIdentifier('.aptloz')),
-    # ChecksFinder
-    Component('ChecksFinder Client', 'ChecksFinderClient'),
-    # Starcraft 2
-    Component('Starcraft 2 Client', 'Starcraft2Client'),
-    # Wargroove
-    Component('Wargroove Client', 'WargrooveClient'),
-    # Zillion
-    Component('Zillion Client', 'ZillionClient',
-              file_identifier=SuffixIdentifier('.apzl')),
-
-    #MegaMan Battle Network 3
-    Component('MMBN3 Client', 'MMBN3Client', file_identifier=SuffixIdentifier('.apbn3'))
+    Component('LttP Adjuster', 'LttPAdjuster')
 ]
 
 
