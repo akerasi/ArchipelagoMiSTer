@@ -27,13 +27,6 @@ from .Offsets import static_item_data_location, items_ram_start, static_item_ele
 from .Regions import create_regions
 from .Rules import set_rules
 
-
-from worlds.LauncherComponents import Component, components, SuffixIdentifier
-
-# Adventure
-components.append(Component('Adventure Client', 'AdventureClient', file_identifier=SuffixIdentifier('.apadvn')))
-
-
 class AdventureSettings(settings.Group):
     class RomFile(settings.UserFilePath):
         """

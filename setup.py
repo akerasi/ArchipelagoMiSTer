@@ -64,25 +64,11 @@ from Cython.Build import cythonize
 non_apworlds: set = {
     "A Link to the Past",
     "Adventure",
-    "ArchipIDLE",
     "Archipelago",
-    "Clique",
-    "Final Fantasy",
     "Lufia II Ancient Cave",
-    "Meritous",
     "Ocarina of Time",
-    "Overcooked! 2",
-    "Raft",
-    "Slay the Spire",
-    "Sudoku",
     "Super Mario 64",
-    "VVVVVV",
-    "Wargroove",
 }
-
-# LogicMixin is broken before 3.10 import revamp
-if sys.version_info < (3,10):
-    non_apworlds.add("Hollow Knight")
 
 def download_SNI():
     print("Updating SNI")
@@ -362,10 +348,10 @@ class BuildExeCommand(cx_Freeze.command.build_exe.build_exe):
             self.installfile(Path(data))
 
         # kivi data files
-        import kivy
-        shutil.copytree(os.path.join(os.path.dirname(kivy.__file__), "data"),
-                        self.buildfolder / "data",
-                        dirs_exist_ok=True)
+#        import kivy
+#        shutil.copytree(os.path.join(os.path.dirname(kivy.__file__), "data"),
+#                        self.buildfolder / "data",
+#                        dirs_exist_ok=True)
 
         os.makedirs(self.buildfolder / "Players" / "Templates", exist_ok=True)
         from Options import generate_yaml_templates
@@ -617,7 +603,7 @@ cx_Freeze.setup(
     ext_modules=cythonize("_speedups.pyx"),
     options={
         "build_exe": {
-            "packages": ["worlds", "kivy", "cymem", "websockets"],
+            "packages": ["worlds", "cymem", "websockets"],
             "includes": [],
             "excludes": ["numpy", "Cython", "PySide2", "PIL",
                          "pandas"],
