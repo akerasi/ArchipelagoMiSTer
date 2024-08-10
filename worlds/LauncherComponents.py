@@ -160,12 +160,14 @@ def install_apworld(apworld_path: str = "") -> None:
 components: List[Component] = [
     # Launcher
     Component('Launcher', 'Launcher', component_type=Type.HIDDEN),
-    Component('Patch', 'Patch', cli=True),
+    # Core
+    Component('Host', 'MultiServer', 'ArchipelagoServer', cli=True,
+              file_identifier=SuffixIdentifier('.archipelago', '.zip')),
     Component('Generate', 'Generate', cli=True),
-
+    Component('Patch', 'Patch', cli=True),
     Component("Install APWorld", func=install_apworld, file_identifier=SuffixIdentifier(".apworld")),
-    Component('Text Client', 'CommonClient', 'ArchipelagoTextClient', func=launch_textclient),
-    Component('LttP Adjuster', 'LttPAdjuster')
+    Component('LttP Adjuster', 'LttPAdjuster'),
+    Component('OoT Adjuster', 'OoTAdjuster')
 ]
 
 
